@@ -1,0 +1,19 @@
+name: Test matrix output workflow
+
+on:
+  workflow_call:
+    outputs:
+      matrix:
+        description: "List of modules"
+        value: ${{ jobs.added_modified.outputs.matrix }}
+
+jobs:
+  added_modified:
+    name: 'Create list of changed modules'
+    runs-on: self-hosted
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: get parent directory and set matrix
+        id: set-matrix
+        run: echo "::set-output name=matrix::{\"node\":[10, 12]}"
