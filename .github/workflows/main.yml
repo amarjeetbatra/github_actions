@@ -17,7 +17,7 @@ on:
 jobs:
 
   test_matrix:
-    name: 'Create list of changed modules'
+    name: 'Create list of changed modules blah'
     uses: amarjeetbatra/github_actions/.github/workflows/test_matrix.yml@main
   
   plan:
