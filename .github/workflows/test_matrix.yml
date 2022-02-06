@@ -10,7 +10,7 @@ on:
 jobs:
   added_modified:
     name: 'Create list of changed modules'
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
