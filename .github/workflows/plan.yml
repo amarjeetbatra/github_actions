@@ -10,7 +10,7 @@ on:
 jobs:
   plan:
     name: 'Plan'
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       max-parallel: 3
