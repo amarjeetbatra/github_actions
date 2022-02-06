@@ -16,4 +16,7 @@ jobs:
     steps:
       - name: get parent directory and set matrix
         id: set-matrix
-        run: echo "::set-output name=matrix::{\"node\":[10, 12]}"
+        run: |
+          #tg_dir=""
+          tg_dir={\"node\":[10, 12]}
+          echo "::set-output name=matrix::$tg_dir"
