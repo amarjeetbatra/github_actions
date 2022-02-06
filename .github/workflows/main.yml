@@ -34,3 +34,14 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+  test_matrix:
+    name: 'Create list of changed modules'
+    uses: amarjeetbatra/github_actions/.github/workflows/test_matrix.yml@main
+  
+  plan:
+    needs: [test_matrix]
+    name: 'Plan'
+    uses: amarjeetbatra/github_actions/.github/workflows/plan.yml@main
+    with:
+      matrix: "${{ needs.test_matrix.outputs.matrix }}"
+  
