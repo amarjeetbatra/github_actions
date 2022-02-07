@@ -23,7 +23,7 @@ jobs:
   plan:
     needs: [test_matrix]
     name: 'Plan'
-    if: contains(needs.test_matrix.outputs.matrix, '100')
+    if: contains(needs.test_matrix.outputs.matrix, 'node')
     uses: amarjeetbatra/github_actions/.github/workflows/plan.yml@main
     with:
       matrix: "${{ needs.test_matrix.outputs.matrix }}"
